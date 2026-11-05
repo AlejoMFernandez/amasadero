@@ -56,7 +56,8 @@ function estadoSuc(id) {
   const { dia, min } = ahoraBA(); const h = HOR[id];
   const r = dia in h ? h[dia] : h.def;
   const cel = innerWidth < 768;
-  if (r && min >= r[0] && min < r[1]) return { abierto: true, txt: `Abierto${cel ? '' : ' ahora'} · cierra ${Math.floor(r[1] / 60)}:${String(r[1] % 60).padStart(2, '0')} hs` };
+  if (r && min >= r[0] && min < r[1]) const hc = `${Math.floor(r[1] / 60)}:${String(r[1] % 60).padStart(2, '0')} hs`;
+    return { abierto: true, txt: cel ? `Abierto · hasta ${hc}` : `Abierto ahora · cierra ${hc}` };
   if (r && min < r[0]) return { abierto: false, txt: cel ? 'Abre hoy 8:30 hs' : 'Cerrado · abre hoy 8:30 hs' };
   return { abierto: false, txt: dia === 'dom' || dia === 'lun' ? (cel ? 'Abre el martes' : 'Cerrado · abre el martes 8:30 hs') : (cel ? 'Abre mañana 8:30 hs' : 'Cerrado · abre mañana 8:30 hs') };
 }

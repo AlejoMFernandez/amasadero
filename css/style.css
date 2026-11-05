@@ -147,7 +147,7 @@ html.menu-abierto { overflow: hidden; }
 .suc-card { appearance: none; text-align: left; min-height: 72px; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(247,245,241,.55); background: rgba(31,26,31,.35); color: var(--blanco); cursor: pointer; display: flex; flex-direction: column; justify-content: center; gap: 3px; text-decoration: none; touch-action: manipulation; min-width: 0; transition: transform .25s var(--ease), background .25s; }
 .suc-card__n { font: 400 17px/1.1 var(--f-j); letter-spacing: .12em; text-transform: uppercase; }
 .suc-card__s { font-size: 12px; line-height: 1.35; color: #E9E5E1; }
-.suc-card__e { font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.suc-card__e { font-size: 12px; white-space: nowrap; font-weight: 700; display: flex; align-items: center; gap: 6px; }
 .suc-card__e::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
 .suc-card__e.abierto { color: #8BD9A6; } .suc-card__e.cerrado { color: #F2B39A; }
 .suc-card--clara { background: var(--harina); border-color: var(--harina); color: var(--carbon); }
