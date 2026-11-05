@@ -1,0 +1,1841 @@
+{
+ "$schema": "https://raw.githubusercontent.com/AlejoMFernandez/kit-demos/main/docs/cliente.schema.json",
+ "id": "amasadero",
+ "nombre": "Amasadero · Panadería Urbana",
+ "pais": "AR",
+ "idioma": "es",
+ "modo": "demo",
+ "demoVersion": 1,
+ "whatsapp": "5491171975411",
+ "instagram": "amasadero.pan",
+ "prefijoPedido": "AM",
+ "supabase": {
+  "url": "",
+  "anonKey": ""
+ },
+ "marca": {
+  "logo": "img/logo.svg",
+  "logoPanel": "img/logo-blanco.svg",
+  "favicon": "img/favicon.png",
+  "logoClaro": "img/logo-blanco.svg",
+  "isotipo": "img/isotipo.svg",
+  "colores": {
+   "fondo": "#F7F5F1",
+   "superficie": "#FFFFFF",
+   "texto": "#1F1A1F",
+   "primario": "#A84A23",
+   "acento": "#C9A27A",
+   "borde": "#DDD8D2"
+  },
+  "fuentes": {
+   "titulos": "'Montserrat', sans-serif",
+   "texto": "'Montserrat', sans-serif",
+   "googleFonts": ""
+  },
+  "estilo": {
+   "forma": "pildora",
+   "sombra": "suave",
+   "borde": "1.5px",
+   "mayusculas": true
+  }
+ },
+ "modulos": {
+  "carta": true,
+  "carrito": true,
+  "reservas": false,
+  "admin": true,
+  "cartaQR": true
+ },
+ "horarios": {
+  "lun": [],
+  "mar": [
+   [
+    "08:30",
+    "20:00"
+   ]
+  ],
+  "mie": [
+   [
+    "08:30",
+    "20:00"
+   ]
+  ],
+  "jue": [
+   [
+    "08:30",
+    "20:00"
+   ]
+  ],
+  "vie": [
+   [
+    "08:30",
+    "20:00"
+   ]
+  ],
+  "sab": [
+   [
+    "08:30",
+    "20:00"
+   ]
+  ],
+  "dom": [
+   [
+    "08:30",
+    "20:00"
+   ]
+  ]
+ },
+ "sucursales": [
+  {
+   "id": "palermo",
+   "nombre": "Palermo",
+   "direccion": "Thames 1565",
+   "barrio": "Palermo",
+   "mapa": "https://maps.google.com/?q=Thames+1565,+CABA",
+   "horarios": {
+    "lun": [],
+    "mar": [
+     [
+      "08:30",
+      "20:00"
+     ]
+    ],
+    "mie": [
+     [
+      "08:30",
+      "20:00"
+     ]
+    ],
+    "jue": [
+     [
+      "08:30",
+      "20:00"
+     ]
+    ],
+    "vie": [
+     [
+      "08:30",
+      "20:00"
+     ]
+    ],
+    "sab": [
+     [
+      "08:30",
+      "20:00"
+     ]
+    ],
+    "dom": [
+     [
+      "08:30",
+      "20:00"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "belgrano",
+   "nombre": "Belgrano I",
+   "direccion": "Av. Dr. Ricardo Balbín 2551",
+   "barrio": "Belgrano",
+   "mapa": "https://maps.google.com/?q=Av.+Ricardo+Balb%C3%ADn+2551,+CABA",
+   "horarios": {
+    "lun": [],
+    "mar": [
+     [
+      "08:30",
+      "20:00"
+     ]
+    ],
+    "mie": [
+     [
+      "08:30",
+      "20:00"
+     ]
+    ],
+    "jue": [
+     [
+      "08:30",
+      "20:00"
+     ]
+    ],
+    "vie": [
+     [
+      "08:30",
+      "20:00"
+     ]
+    ],
+    "sab": [
+     [
+      "08:30",
+      "20:00"
+     ]
+    ],
+    "dom": [
+     [
+      "08:30",
+      "18:00"
+     ]
+    ]
+   }
+  }
+ ],
+ "pedidos": {
+  "salidas": [
+   "mercadopago",
+   "whatsapp"
+  ],
+  "tipos": [
+   "retiro"
+  ],
+  "envio": 0,
+  "minimo": 0,
+  "sinPrecio": "a_confirmar",
+  "encargo": {
+   "anticipacionHoras": 24,
+   "diasAdelante": 14,
+   "franjas": [
+    {
+     "id": "manana",
+     "nombre": "Mañana",
+     "desde": "08:30",
+     "hasta": "12:00"
+    },
+    {
+     "id": "mediodia",
+     "nombre": "Mediodía",
+     "desde": "12:00",
+     "hasta": "16:00"
+    },
+    {
+     "id": "tarde",
+     "nombre": "Tarde",
+     "desde": "16:00",
+     "hasta": "20:00"
+    }
+   ]
+  }
+ },
+ "pagos": {
+  "mercadopago": {
+   "endpoint": "https://kit-demos-amf.vercel.app/api/mp-preference",
+   "modo": "sandbox"
+  }
+ },
+ "cartaQR": {
+  "pedir": false,
+  "estilo": "marca",
+  "textos": {
+   "titulo": "Nuestra carta"
+  }
+ },
+ "textos": {
+  "tuPedido": "Tu bolsa",
+  "verPedido": "Ver tu bolsa",
+  "carritoVacio": "Tu bolsa está vacía.",
+  "carritoVacioSub": "Sumá algo de la carta o armá tu caja.",
+  "agregar": "Sumar",
+  "enviarPedido": "Encargar",
+  "pedidoListo": "¡Tu encargo está en el horno!",
+  "pedidoListoSub": "Tu código es {codigo}. El local lo ve en su panel y te escribe por WhatsApp.",
+  "pedidoPagadoSub": "Encargo {codigo} pagado. Ya está en el horno.",
+  "notaItem": "Aclaración",
+  "notaPedido": "¿Algo más? (es para regalo, sin azúcar…)",
+  "tiendaOnline": "Proveeduría (mayorista)",
+  "vaEnTienda": "Va en la proveeduría",
+  "vaEnTiendaHint": "Productos del catálogo mayorista: no aparecen en la carta del local ni en la del QR."
+ },
+ "carta": {
+  "categorias": [
+   {
+    "id": "pal-cafe",
+    "nombre": "Cafetería · Palermo",
+    "orden": 0
+   },
+   {
+    "id": "pal-promos",
+    "nombre": "Promos · Palermo",
+    "orden": 1
+   },
+   {
+    "id": "pal-pasteleria",
+    "nombre": "Pastelería y bollería · Palermo",
+    "orden": 2
+   },
+   {
+    "id": "pal-finde",
+    "nombre": "Especiales del finde · Palermo",
+    "orden": 3
+   },
+   {
+    "id": "pal-cocina",
+    "nombre": "Cocina y brunch · Palermo",
+    "orden": 4
+   },
+   {
+    "id": "pal-panaderia",
+    "nombre": "Panadería · Palermo",
+    "orden": 5
+   },
+   {
+    "id": "pal-bebidas",
+    "nombre": "Bebidas · Palermo",
+    "orden": 6
+   },
+   {
+    "id": "bel-pasteleria",
+    "nombre": "Pastelería y bollería · Belgrano I",
+    "orden": 7
+   },
+   {
+    "id": "bel-finde",
+    "nombre": "Especiales del finde · Belgrano I",
+    "orden": 8
+   },
+   {
+    "id": "bel-panaderia",
+    "nombre": "Panadería · Belgrano I",
+    "orden": 9
+   },
+   {
+    "id": "may-pasteleria",
+    "nombre": "Proveeduría · Pastelería y bollería",
+    "orden": 10,
+    "tienda": true
+   },
+   {
+    "id": "may-panaderia",
+    "nombre": "Proveeduría · Panadería",
+    "orden": 11,
+    "tienda": true
+   }
+  ],
+  "productos": [
+   {
+    "id": "pal-espresso",
+    "categoria": "pal-cafe",
+    "nombre": "Espresso",
+    "precio": 2300,
+    "descripcion": "Shot de café"
+   },
+   {
+    "id": "pal-lungo",
+    "categoria": "pal-cafe",
+    "nombre": "Lungo",
+    "precio": 2300,
+    "descripcion": "Shot de café y agua"
+   },
+   {
+    "id": "pal-doppio",
+    "categoria": "pal-cafe",
+    "nombre": "Doppio",
+    "precio": 2800,
+    "descripcion": "Doble shot de café"
+   },
+   {
+    "id": "pal-americano",
+    "categoria": "pal-cafe",
+    "nombre": "Americano",
+    "precio": 3600,
+    "descripcion": "Doble shot de café y agua",
+    "foto": "img/p-americano.webp",
+    "miniatura": "img/t-americano.webp"
+   },
+   {
+    "id": "pal-magic",
+    "categoria": "pal-cafe",
+    "nombre": "Magic",
+    "precio": 3650,
+    "descripcion": "Espresso y leche"
+   },
+   {
+    "id": "pal-machiatto",
+    "categoria": "pal-cafe",
+    "nombre": "Machiatto",
+    "precio": 2800,
+    "descripcion": "Espresso y espuma de leche"
+   },
+   {
+    "id": "pal-capuccino",
+    "categoria": "pal-cafe",
+    "nombre": "Capuccino",
+    "precio": 3900,
+    "descripcion": "Espresso con leche texturizada"
+   },
+   {
+    "id": "pal-flat-white",
+    "categoria": "pal-cafe",
+    "nombre": "Flat white",
+    "precio": 4300,
+    "descripcion": "Doble espresso con leche texturizada",
+    "foto": "img/p-latte.webp",
+    "miniatura": "img/t-latte.webp"
+   },
+   {
+    "id": "pal-latte",
+    "categoria": "pal-cafe",
+    "nombre": "Latte",
+    "precio": 4300,
+    "descripcion": "Doble espresso con leche texturizada",
+    "foto": "img/p-latte.webp",
+    "miniatura": "img/t-latte.webp"
+   },
+   {
+    "id": "pal-lagrima",
+    "categoria": "pal-cafe",
+    "nombre": "Lágrima",
+    "precio": 3900,
+    "descripcion": "Ristretto y leche emulsionada"
+   },
+   {
+    "id": "pal-caramel-latte",
+    "categoria": "pal-cafe",
+    "nombre": "Caramel latte",
+    "precio": 4300,
+    "descripcion": "Doble espresso con leche y caramelo"
+   },
+   {
+    "id": "pal-affogato",
+    "categoria": "pal-cafe",
+    "nombre": "Affogato",
+    "precio": 4000,
+    "descripcion": "Espresso y helado de crema americana"
+   },
+   {
+    "id": "pal-moca-tazon",
+    "categoria": "pal-cafe",
+    "nombre": "Moca tazón",
+    "precio": 5500,
+    "descripcion": "Espresso, shot de chocolate semiamargo y leche texturizada"
+   },
+   {
+    "id": "pal-hazelnut-latte",
+    "categoria": "pal-cafe",
+    "nombre": "Hazelnut latte",
+    "precio": 5400,
+    "descripcion": "Doble espresso, leche y caramelo de avellanas"
+   },
+   {
+    "id": "pal-chocolatada",
+    "categoria": "pal-cafe",
+    "nombre": "Chocolatada",
+    "precio": 4200,
+    "descripcion": "Leche texturizada con chocolate semiamargo, fría o caliente"
+   },
+   {
+    "id": "pal-iced-latte",
+    "categoria": "pal-cafe",
+    "nombre": "Iced latte",
+    "precio": 5400,
+    "foto": "img/p-iced.webp",
+    "miniatura": "img/t-iced.webp"
+   },
+   {
+    "id": "pal-iced-coffee",
+    "categoria": "pal-cafe",
+    "nombre": "Iced coffee",
+    "precio": 3900,
+    "foto": "img/p-iced.webp",
+    "miniatura": "img/t-iced.webp"
+   },
+   {
+    "id": "pal-iced-hazelnut-latte",
+    "categoria": "pal-cafe",
+    "nombre": "Iced hazelnut latte",
+    "precio": 5400
+   },
+   {
+    "id": "pal-iced-caramel-latte",
+    "categoria": "pal-cafe",
+    "nombre": "Iced caramel latte",
+    "precio": 4600
+   },
+   {
+    "id": "pal-2-medialunas-cafe-o-te",
+    "categoria": "pal-promos",
+    "nombre": "2 medialunas + café o té",
+    "precio": 4950
+   },
+   {
+    "id": "pal-medialuna-con-jamon-y-queso-cafe-o-te",
+    "categoria": "pal-promos",
+    "nombre": "Medialuna con jamón y queso + café o té",
+    "precio": 4950
+   },
+   {
+    "id": "pal-avocado-toast-cafe-o-te",
+    "categoria": "pal-promos",
+    "nombre": "Avocado toast + café o té",
+    "precio": 8250
+   },
+   {
+    "id": "pal-waffle-cafe-o-te",
+    "categoria": "pal-promos",
+    "nombre": "Waffle + café o té",
+    "precio": 6600
+   },
+   {
+    "id": "pal-huevos-revueltos-cafe-o-te",
+    "categoria": "pal-promos",
+    "nombre": "Huevos revueltos + café o té",
+    "precio": 8250
+   },
+   {
+    "id": "pal-ensalada-limonada-o-pomelada",
+    "categoria": "pal-promos",
+    "nombre": "Ensalada + limonada o pomelada",
+    "precio": 14300
+   },
+   {
+    "id": "pal-sandwich-gaseosa-o-agua",
+    "categoria": "pal-promos",
+    "nombre": "Sándwich + gaseosa o agua",
+    "precio": 11000
+   },
+   {
+    "id": "pal-hamburguesa-agua-o-gaseosa",
+    "categoria": "pal-promos",
+    "nombre": "Hamburguesa + agua o gaseosa",
+    "precio": 17600
+   },
+   {
+    "id": "pal-12-medialunas",
+    "categoria": "pal-pasteleria",
+    "nombre": "12 medialunas",
+    "precio": 23000,
+    "descripcion": "Súper esponjosas y húmedas, terminadas con mucho almíbar.",
+    "foto": "img/p-medialunas.webp",
+    "miniatura": "img/t-medialunas.webp"
+   },
+   {
+    "id": "pal-6-medialunas",
+    "categoria": "pal-pasteleria",
+    "nombre": "6 medialunas",
+    "precio": 10500,
+    "foto": "img/p-medialunas.webp",
+    "miniatura": "img/t-medialunas.webp"
+   },
+   {
+    "id": "pal-alfajor-blanco",
+    "categoria": "pal-pasteleria",
+    "nombre": "Alfajor blanco",
+    "precio": 4500,
+    "descripcion": "Baño de chocolate blanco y maní, relleno de dulce de leche con un corazón de frutos rojos."
+   },
+   {
+    "id": "pal-alfajor-de-almendra",
+    "categoria": "pal-pasteleria",
+    "nombre": "Alfajor de almendra",
+    "precio": 4500
+   },
+   {
+    "id": "pal-budin",
+    "categoria": "pal-pasteleria",
+    "nombre": "Budín",
+    "precio": 6300,
+    "descripcion": "Banana y chocolate, frutos rojos o naranja y pistacho."
+   },
+   {
+    "id": "pal-cheesecake-de-frutos-rojos",
+    "categoria": "pal-pasteleria",
+    "nombre": "Cheesecake de frutos rojos",
+    "precio": 6380,
+    "descripcion": "Frutos rojos o maracuyá.",
+    "foto": "img/p-cheesecake.webp",
+    "miniatura": "img/t-cheesecake.webp"
+   },
+   {
+    "id": "pal-cookie",
+    "categoria": "pal-pasteleria",
+    "nombre": "Cookie",
+    "precio": 4000,
+    "descripcion": "Húmeda adentro y crocante afuera, chocolate y avellanas tostadas.",
+    "foto": "img/p-cookie.webp",
+    "miniatura": "img/t-cookie.webp"
+   },
+   {
+    "id": "pal-pepas",
+    "categoria": "pal-pasteleria",
+    "nombre": "Pepas",
+    "precio": 3900
+   },
+   {
+    "id": "pal-granola",
+    "categoria": "pal-pasteleria",
+    "nombre": "Granola",
+    "precio": 3150,
+    "descripcion": "Granola casera x 200 g."
+   },
+   {
+    "id": "pal-medialuna",
+    "categoria": "pal-pasteleria",
+    "nombre": "Medialuna",
+    "precio": 2100,
+    "foto": "img/p-medialunas.webp",
+    "miniatura": "img/t-medialunas.webp"
+   },
+   {
+    "id": "pal-medialuna-rellena",
+    "categoria": "pal-pasteleria",
+    "nombre": "Medialuna rellena",
+    "precio": 2300,
+    "descripcion": "Dulce de leche o pastelera."
+   },
+   {
+    "id": "pal-croissant",
+    "categoria": "pal-pasteleria",
+    "nombre": "Croissant",
+    "precio": 4200,
+    "descripcion": "Súper livianos y aireados, levemente dulces.",
+    "foto": "img/p-croissant.webp",
+    "miniatura": "img/t-croissant.webp"
+   },
+   {
+    "id": "pal-croissant-relleno",
+    "categoria": "pal-pasteleria",
+    "nombre": "Croissant relleno",
+    "precio": 5200,
+    "descripcion": "Dulce de leche o pastelera."
+   },
+   {
+    "id": "pal-crumble-de-manzana",
+    "categoria": "pal-pasteleria",
+    "nombre": "Crumble de manzana",
+    "precio": 6380,
+    "foto": "img/p-crumble.webp",
+    "miniatura": "img/t-crumble.webp"
+   },
+   {
+    "id": "pal-key-lime-pie",
+    "categoria": "pal-pasteleria",
+    "nombre": "Key lime pie",
+    "precio": 6380,
+    "foto": "img/p-keylime.webp",
+    "miniatura": "img/t-keylime.webp"
+   },
+   {
+    "id": "pal-palmeritas",
+    "categoria": "pal-pasteleria",
+    "nombre": "Palmeritas",
+    "precio": 4100
+   },
+   {
+    "id": "pal-pan-de-chocolate",
+    "categoria": "pal-pasteleria",
+    "nombre": "Pan de chocolate",
+    "precio": 4600,
+    "descripcion": "Masa hojaldrada con manteca y dos barras de chocolate.",
+    "foto": "img/p-pan-chocolate.webp",
+    "miniatura": "img/t-pan-chocolate.webp"
+   },
+   {
+    "id": "pal-roll-de-canela",
+    "categoria": "pal-pasteleria",
+    "nombre": "Roll de canela",
+    "precio": 5200,
+    "descripcion": "Relleno de canela, frosting y maní.",
+    "foto": "img/p-roll.webp",
+    "miniatura": "img/t-roll.webp"
+   },
+   {
+    "id": "pal-scon-de-queso",
+    "categoria": "pal-pasteleria",
+    "nombre": "Scon de queso",
+    "precio": 4000,
+    "descripcion": "Sardo y tybo, húmedo y contundente."
+   },
+   {
+    "id": "pal-torta-de-chocolate",
+    "categoria": "pal-pasteleria",
+    "nombre": "Torta de chocolate",
+    "precio": 6600,
+    "foto": "img/p-torta-choco.webp",
+    "miniatura": "img/t-torta-choco.webp"
+   },
+   {
+    "id": "pal-croissant-relleno-de-chocolate-y-mascarpone",
+    "categoria": "pal-finde",
+    "nombre": "Croissant relleno de chocolate y mascarpone",
+    "precio": 6050,
+    "descripcion": "Disponible los sábados.",
+    "foto": "img/p-croissant.webp",
+    "miniatura": "img/t-croissant.webp"
+   },
+   {
+    "id": "pal-croissant-especial",
+    "categoria": "pal-finde",
+    "nombre": "Croissant especial",
+    "precio": 6050,
+    "descripcion": "Sábados y domingos. Consultá las opciones.",
+    "foto": "img/p-croissant.webp",
+    "miniatura": "img/t-croissant.webp"
+   },
+   {
+    "id": "pal-danesa",
+    "categoria": "pal-finde",
+    "nombre": "Danesa",
+    "precio": 5500,
+    "descripcion": "Disponible los sábados.",
+    "foto": "img/p-danesa.webp",
+    "miniatura": "img/t-danesa.webp"
+   },
+   {
+    "id": "pal-focaccia",
+    "categoria": "pal-finde",
+    "nombre": "Focaccia",
+    "precio": 5860,
+    "descripcion": "Sábados y domingos.",
+    "foto": "img/p-focaccia.webp",
+    "miniatura": "img/t-focaccia.webp"
+   },
+   {
+    "id": "pal-avocado-toast",
+    "categoria": "pal-cocina",
+    "nombre": "Avocado toast",
+    "precio": 8250,
+    "descripcion": "Tostada de pan blanco con palta y huevo revuelto.",
+    "foto": "img/p-avocado.webp",
+    "miniatura": "img/t-avocado.webp"
+   },
+   {
+    "id": "pal-brunch-amasadero-para-2",
+    "categoria": "pal-cocina",
+    "nombre": "Brunch Amasadero para 2",
+    "precio": 40700,
+    "descripcion": "2 infusiones, yogurt con granola y fruta, avocado toast, croissant de jamón y queso, alfajor, porción de torta y 2 jugos de naranja.",
+    "foto": "img/p-brunch.webp",
+    "miniatura": "img/t-brunch.webp"
+   },
+   {
+    "id": "pal-brunch-soho-para-2",
+    "categoria": "pal-cocina",
+    "nombre": "Brunch Soho para 2",
+    "precio": 35000,
+    "descripcion": "2 infusiones, huevos revueltos, croissant de pollo y palta, cookie, waffle con nutella, crema y frutos rojos y limonada."
+   },
+   {
+    "id": "pal-cookie-con-helado",
+    "categoria": "pal-cocina",
+    "nombre": "Cookie con helado",
+    "precio": 4950,
+    "descripcion": "Una bocha: dulce de leche granizado, chocolate con almendra, maracuyá o frutilla con crema."
+   },
+   {
+    "id": "pal-croissant-de-jamon-y-queso",
+    "categoria": "pal-cocina",
+    "nombre": "Croissant de jamón y queso",
+    "precio": 7700,
+    "descripcion": "Con jamón, queso, lechuga, tomate y mostaza."
+   },
+   {
+    "id": "pal-croissant-de-pollo-palta-y-huevo",
+    "categoria": "pal-cocina",
+    "nombre": "Croissant de pollo, palta y huevo",
+    "precio": 8470,
+    "descripcion": "Con palta, huevo duro, cebolla y mayonesa."
+   },
+   {
+    "id": "pal-degustacion-de-helados",
+    "categoria": "pal-cocina",
+    "nombre": "Degustación de helados",
+    "precio": 10000,
+    "descripcion": "Dulce de leche granizado, chocolate con almendra, maracuyá y frutilla con crema."
+   },
+   {
+    "id": "pal-ensalada-con-pollo-y-bacon",
+    "categoria": "pal-cocina",
+    "nombre": "Ensalada con pollo y bacon",
+    "precio": 12100,
+    "foto": "img/p-ensalada.webp",
+    "miniatura": "img/t-ensalada.webp"
+   },
+   {
+    "id": "pal-ensalada-veggie",
+    "categoria": "pal-cocina",
+    "nombre": "Ensalada veggie",
+    "precio": 11000,
+    "descripcion": "Lechuga francesa y morada, rúcula, pesto, queso brie, tomates secos y croutones."
+   },
+   {
+    "id": "pal-hamburguesa",
+    "categoria": "pal-cocina",
+    "nombre": "Hamburguesa",
+    "precio": 13200,
+    "descripcion": "Con aderezo, cheddar y pepinillos, con papas fritas."
+   },
+   {
+    "id": "pal-huevos-revueltos",
+    "categoria": "pal-cocina",
+    "nombre": "Huevos revueltos",
+    "precio": 6050,
+    "foto": "img/p-huevos.webp",
+    "miniatura": "img/t-huevos.webp"
+   },
+   {
+    "id": "pal-huevos-revueltos-con-panceta-o-vegetales",
+    "categoria": "pal-cocina",
+    "nombre": "Huevos revueltos con panceta o vegetales",
+    "precio": 6600,
+    "foto": "img/p-huevos-panceta.webp",
+    "miniatura": "img/t-huevos-panceta.webp"
+   },
+   {
+    "id": "pal-medialuna-de-jamon-y-queso",
+    "categoria": "pal-cocina",
+    "nombre": "Medialuna de jamón y queso",
+    "precio": 3300
+   },
+   {
+    "id": "pal-papas-fritas",
+    "categoria": "pal-cocina",
+    "nombre": "Papas fritas",
+    "precio": 4400,
+    "descripcion": "Porción de papas fritas con condimento."
+   },
+   {
+    "id": "pal-sandwich-de-pastron",
+    "categoria": "pal-cocina",
+    "nombre": "Sándwich de pastrón",
+    "precio": 8500,
+    "descripcion": "Con queso crema y ciboulette, lechuga y pepinillos."
+   },
+   {
+    "id": "pal-sandwich-de-pastron-caliente",
+    "categoria": "pal-cocina",
+    "nombre": "Sándwich de pastrón caliente",
+    "precio": 9200
+   },
+   {
+    "id": "pal-sandwich-vegetariano",
+    "categoria": "pal-cocina",
+    "nombre": "Sándwich vegetariano",
+    "precio": 7500,
+    "descripcion": "Con pesto, rúcula, queso brie y tomates secos."
+   },
+   {
+    "id": "pal-tarta-crumble-con-helado",
+    "categoria": "pal-cocina",
+    "nombre": "Tarta crumble con helado",
+    "precio": 8470,
+    "descripcion": "Con una bocha de helado.",
+    "foto": "img/p-crumble-helado.webp",
+    "miniatura": "img/t-crumble-helado.webp"
+   },
+   {
+    "id": "pal-tostadas-de-pan",
+    "categoria": "pal-cocina",
+    "nombre": "Tostadas de pan",
+    "precio": 4620,
+    "descripcion": "Con 2 dips: dulce de leche, mermelada, queso crema o manteca."
+   },
+   {
+    "id": "pal-tostado-de-jamon-natural-y-queso",
+    "categoria": "pal-cocina",
+    "nombre": "Tostado de jamón natural y queso",
+    "precio": 7150,
+    "foto": "img/p-tostado.webp",
+    "miniatura": "img/t-tostado.webp"
+   },
+   {
+    "id": "pal-waffle-con-helado",
+    "categoria": "pal-cocina",
+    "nombre": "Waffle con helado",
+    "precio": 7260,
+    "descripcion": "Con una bocha de helado."
+   },
+   {
+    "id": "pal-waffles",
+    "categoria": "pal-cocina",
+    "nombre": "Waffles",
+    "precio": 5720,
+    "descripcion": "Con frutos rojos, crema de vainilla y nutella."
+   },
+   {
+    "id": "pal-yogurt-con-granola-y-fruta",
+    "categoria": "pal-cocina",
+    "nombre": "Yogurt con granola y fruta",
+    "precio": 5060
+   },
+   {
+    "id": "pal-barra",
+    "categoria": "pal-panaderia",
+    "nombre": "Barra",
+    "precio": 3500
+   },
+   {
+    "id": "pal-campo-blanco",
+    "categoria": "pal-panaderia",
+    "nombre": "Campo blanco",
+    "precio": 5900,
+    "descripcion": "Masa madre, corteza crujiente y fina, baja acidez y miga húmeda. 700 g.",
+    "foto": "img/p-campo.webp",
+    "miniatura": "img/t-campo.webp"
+   },
+   {
+    "id": "pal-campo-integral",
+    "categoria": "pal-panaderia",
+    "nombre": "Campo integral",
+    "precio": 8900,
+    "descripcion": "Masa madre con centeno e integral. 750 g."
+   },
+   {
+    "id": "pal-campo-semillas-y-mascabo",
+    "categoria": "pal-panaderia",
+    "nombre": "Campo semillas y mascabo",
+    "precio": 7600,
+    "descripcion": "Chía, lino, sésamo y girasol; miga súper húmeda por el mascabo. 750 g.",
+    "foto": "img/p-semillas.webp",
+    "miniatura": "img/t-semillas.webp"
+   },
+   {
+    "id": "pal-ciabatta",
+    "categoria": "pal-panaderia",
+    "nombre": "Ciabatta",
+    "precio": 1900,
+    "descripcion": "Masa madre y aceite de oliva, miga aireada. Ideal para sánguches.",
+    "foto": "img/p-ciabatta.webp",
+    "miniatura": "img/t-ciabatta.webp"
+   },
+   {
+    "id": "pal-molde-integral",
+    "categoria": "pal-panaderia",
+    "nombre": "Molde integral",
+    "precio": 9500
+   },
+   {
+    "id": "pal-pack-x-4-brioche-de-sesamo",
+    "categoria": "pal-panaderia",
+    "nombre": "Pack x 4 brioche de sésamo",
+    "precio": 4400,
+    "descripcion": "Corteza blanda y miga súper esponjosa. Ideal para hamburguesas.",
+    "foto": "img/p-brioche.webp",
+    "miniatura": "img/t-brioche.webp"
+   },
+   {
+    "id": "pal-palito-de-queso",
+    "categoria": "pal-panaderia",
+    "nombre": "Palito de queso",
+    "precio": 3500,
+    "descripcion": "Hojaldre con manteca y parmesano."
+   },
+   {
+    "id": "pal-agua-local",
+    "categoria": "pal-bebidas",
+    "nombre": "Agua local",
+    "precio": 3190
+   },
+   {
+    "id": "pal-agua-mineral-con-gas",
+    "categoria": "pal-bebidas",
+    "nombre": "Agua mineral con gas",
+    "precio": 3190
+   },
+   {
+    "id": "pal-cerveza",
+    "categoria": "pal-bebidas",
+    "nombre": "Cerveza",
+    "precio": 6600,
+    "descripcion": "Amber lager, session IPA o solo pils."
+   },
+   {
+    "id": "pal-chai",
+    "categoria": "pal-bebidas",
+    "nombre": "Chai",
+    "precio": 3280
+   },
+   {
+    "id": "pal-coca-cola",
+    "categoria": "pal-bebidas",
+    "nombre": "Coca Cola",
+    "precio": 4290
+   },
+   {
+    "id": "pal-jugo-de-naranja",
+    "categoria": "pal-bebidas",
+    "nombre": "Jugo de naranja",
+    "precio": 4290
+   },
+   {
+    "id": "pal-limonada-x-500-ml",
+    "categoria": "pal-bebidas",
+    "nombre": "Limonada x 500 ml",
+    "precio": 5720,
+    "descripcion": "Con menta y jengibre."
+   },
+   {
+    "id": "pal-pomelada-x-500-ml",
+    "categoria": "pal-bebidas",
+    "nombre": "Pomelada x 500 ml",
+    "precio": 5720
+   },
+   {
+    "id": "pal-sprite",
+    "categoria": "pal-bebidas",
+    "nombre": "Sprite",
+    "precio": 5720
+   },
+   {
+    "id": "pal-te-berries",
+    "categoria": "pal-bebidas",
+    "nombre": "Té berries",
+    "precio": 3960
+   },
+   {
+    "id": "pal-te-earl-grey",
+    "categoria": "pal-bebidas",
+    "nombre": "Té Earl Grey",
+    "precio": 3960
+   },
+   {
+    "id": "pal-te-oriental-summer",
+    "categoria": "pal-bebidas",
+    "nombre": "Té Oriental Summer",
+    "precio": 3960
+   },
+   {
+    "id": "bel-12-medialunas",
+    "categoria": "bel-pasteleria",
+    "nombre": "12 medialunas",
+    "precio": 23000,
+    "descripcion": "Súper esponjosas y húmedas, terminadas con mucho almíbar.",
+    "foto": "img/p-medialunas.webp",
+    "miniatura": "img/t-medialunas.webp"
+   },
+   {
+    "id": "bel-6-medialunas",
+    "categoria": "bel-pasteleria",
+    "nombre": "6 medialunas",
+    "precio": 10500,
+    "foto": "img/p-medialunas.webp",
+    "miniatura": "img/t-medialunas.webp"
+   },
+   {
+    "id": "bel-alfajor-de-almendra",
+    "categoria": "bel-pasteleria",
+    "nombre": "Alfajor de almendra",
+    "precio": 4500
+   },
+   {
+    "id": "bel-budin",
+    "categoria": "bel-pasteleria",
+    "nombre": "Budín",
+    "precio": 6300,
+    "descripcion": "Banana y chocolate."
+   },
+   {
+    "id": "bel-cookie",
+    "categoria": "bel-pasteleria",
+    "nombre": "Cookie",
+    "precio": 4000,
+    "descripcion": "Húmeda adentro y crocante afuera, chocolate y avellanas tostadas.",
+    "foto": "img/p-cookie.webp",
+    "miniatura": "img/t-cookie.webp"
+   },
+   {
+    "id": "bel-pepas",
+    "categoria": "bel-pasteleria",
+    "nombre": "Pepas",
+    "precio": 3900
+   },
+   {
+    "id": "bel-granola",
+    "categoria": "bel-pasteleria",
+    "nombre": "Granola",
+    "precio": 3150,
+    "descripcion": "Granola casera x 200 g."
+   },
+   {
+    "id": "bel-medialuna",
+    "categoria": "bel-pasteleria",
+    "nombre": "Medialuna",
+    "precio": 1800,
+    "foto": "img/p-medialunas.webp",
+    "miniatura": "img/t-medialunas.webp"
+   },
+   {
+    "id": "bel-medialuna-rellena",
+    "categoria": "bel-pasteleria",
+    "nombre": "Medialuna rellena",
+    "precio": 2300,
+    "descripcion": "Dulce de leche o pastelera."
+   },
+   {
+    "id": "bel-croissant",
+    "categoria": "bel-pasteleria",
+    "nombre": "Croissant",
+    "precio": 4200,
+    "descripcion": "Súper livianos y aireados, levemente dulces.",
+    "foto": "img/p-croissant.webp",
+    "miniatura": "img/t-croissant.webp"
+   },
+   {
+    "id": "bel-croissant-relleno",
+    "categoria": "bel-pasteleria",
+    "nombre": "Croissant relleno",
+    "precio": 5200,
+    "descripcion": "Dulce de leche o pastelera."
+   },
+   {
+    "id": "bel-palmeritas",
+    "categoria": "bel-pasteleria",
+    "nombre": "Palmeritas",
+    "precio": 4100
+   },
+   {
+    "id": "bel-pan-de-chocolate",
+    "categoria": "bel-pasteleria",
+    "nombre": "Pan de chocolate",
+    "precio": 4600,
+    "descripcion": "Masa hojaldrada con manteca y dos barras de chocolate.",
+    "foto": "img/p-pan-chocolate.webp",
+    "miniatura": "img/t-pan-chocolate.webp"
+   },
+   {
+    "id": "bel-roll-de-canela",
+    "categoria": "bel-pasteleria",
+    "nombre": "Roll de canela",
+    "precio": 5200,
+    "descripcion": "Relleno de canela, frosting y maní.",
+    "foto": "img/p-roll.webp",
+    "miniatura": "img/t-roll.webp"
+   },
+   {
+    "id": "bel-scon-de-queso",
+    "categoria": "bel-pasteleria",
+    "nombre": "Scon de queso",
+    "precio": 4000,
+    "descripcion": "Sardo y tybo, húmedo y contundente."
+   },
+   {
+    "id": "bel-croissant-relleno-de-chocolate-y-mascarpone",
+    "categoria": "bel-finde",
+    "nombre": "Croissant relleno de chocolate y mascarpone",
+    "precio": 5500,
+    "descripcion": "Disponible los sábados.",
+    "foto": "img/p-croissant.webp",
+    "miniatura": "img/t-croissant.webp"
+   },
+   {
+    "id": "bel-croissant-especial",
+    "categoria": "bel-finde",
+    "nombre": "Croissant especial",
+    "precio": 6050,
+    "descripcion": "Sábados y domingos. Consultá las opciones.",
+    "foto": "img/p-croissant.webp",
+    "miniatura": "img/t-croissant.webp"
+   },
+   {
+    "id": "bel-danesa",
+    "categoria": "bel-finde",
+    "nombre": "Danesa",
+    "precio": 5500,
+    "descripcion": "Disponible los sábados.",
+    "foto": "img/p-danesa.webp",
+    "miniatura": "img/t-danesa.webp"
+   },
+   {
+    "id": "bel-focaccia",
+    "categoria": "bel-finde",
+    "nombre": "Focaccia",
+    "precio": 5860,
+    "descripcion": "Sábados y domingos.",
+    "foto": "img/p-focaccia.webp",
+    "miniatura": "img/t-focaccia.webp"
+   },
+   {
+    "id": "bel-barra",
+    "categoria": "bel-panaderia",
+    "nombre": "Barra",
+    "precio": 3500
+   },
+   {
+    "id": "bel-campo-blanco",
+    "categoria": "bel-panaderia",
+    "nombre": "Campo blanco",
+    "precio": 5900,
+    "descripcion": "Masa madre, corteza crujiente y fina, baja acidez y miga húmeda. 700 g.",
+    "foto": "img/p-campo.webp",
+    "miniatura": "img/t-campo.webp"
+   },
+   {
+    "id": "bel-campo-integral",
+    "categoria": "bel-panaderia",
+    "nombre": "Campo integral",
+    "precio": 8900,
+    "descripcion": "Masa madre con centeno e integral. 750 g."
+   },
+   {
+    "id": "bel-campo-semillas-y-mascabo",
+    "categoria": "bel-panaderia",
+    "nombre": "Campo semillas y mascabo",
+    "precio": 7600,
+    "descripcion": "Chía, lino, sésamo y girasol; miga súper húmeda por el mascabo. 750 g.",
+    "foto": "img/p-semillas.webp",
+    "miniatura": "img/t-semillas.webp"
+   },
+   {
+    "id": "bel-ciabatta",
+    "categoria": "bel-panaderia",
+    "nombre": "Ciabatta",
+    "precio": 1900,
+    "descripcion": "Masa madre y aceite de oliva, miga aireada. Ideal para sánguches.",
+    "foto": "img/p-ciabatta.webp",
+    "miniatura": "img/t-ciabatta.webp"
+   },
+   {
+    "id": "bel-molde-integral",
+    "categoria": "bel-panaderia",
+    "nombre": "Molde integral",
+    "precio": 9500
+   },
+   {
+    "id": "bel-pack-x-4-brioche-de-sesamo",
+    "categoria": "bel-panaderia",
+    "nombre": "Pack x 4 brioche de sésamo",
+    "precio": 4400,
+    "descripcion": "Corteza blanda y miga súper esponjosa. Ideal para hamburguesas.",
+    "foto": "img/p-brioche.webp",
+    "miniatura": "img/t-brioche.webp"
+   },
+   {
+    "id": "bel-palito-de-queso",
+    "categoria": "bel-panaderia",
+    "nombre": "Palito de queso",
+    "precio": 3500,
+    "descripcion": "Hojaldre con manteca y parmesano."
+   },
+   {
+    "id": "may-medialunas",
+    "categoria": "may-pasteleria",
+    "nombre": "Medialunas",
+    "precio": null,
+    "descripcion": "Masa hojaldrada con manteca, miel, vainilla y toque de naranja. Terminadas con mucho almíbar.",
+    "foto": "img/p-medialunas.webp",
+    "miniatura": "img/t-medialunas.webp",
+    "peso": "70 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cruda",
+        "nombre": "Cruda"
+       },
+       {
+        "id": "congelada",
+        "nombre": "Congelada"
+       },
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-croissant",
+    "categoria": "may-pasteleria",
+    "nombre": "Croissant",
+    "precio": null,
+    "descripcion": "Masa hojaldrada, súper livianos y aireados, levemente dulces.",
+    "foto": "img/p-croissant.webp",
+    "miniatura": "img/t-croissant.webp",
+    "peso": "100 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cruda",
+        "nombre": "Cruda"
+       },
+       {
+        "id": "congelada",
+        "nombre": "Congelada"
+       },
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-palmeritas",
+    "categoria": "may-pasteleria",
+    "nombre": "Palmeritas",
+    "precio": null,
+    "descripcion": "Crocantes por fuera y esponjosas por dentro.",
+    "peso": "130 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cruda",
+        "nombre": "Cruda"
+       },
+       {
+        "id": "congelada",
+        "nombre": "Congelada"
+       },
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-pan-de-chocolate",
+    "categoria": "may-pasteleria",
+    "nombre": "Pan de chocolate",
+    "precio": null,
+    "descripcion": "Rellenos con dos barras de chocolate.",
+    "foto": "img/p-pan-chocolate.webp",
+    "miniatura": "img/t-pan-chocolate.webp",
+    "peso": "130 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cruda",
+        "nombre": "Cruda"
+       },
+       {
+        "id": "congelada",
+        "nombre": "Congelada"
+       },
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-roll-de-canela",
+    "categoria": "may-pasteleria",
+    "nombre": "Roll de canela",
+    "precio": null,
+    "descripcion": "Canela, frosting y maní.",
+    "foto": "img/p-roll.webp",
+    "miniatura": "img/t-roll.webp",
+    "peso": "130 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cruda",
+        "nombre": "Cruda"
+       },
+       {
+        "id": "congelada",
+        "nombre": "Congelada"
+       },
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-roll-de-panceta-y-queso",
+    "categoria": "may-pasteleria",
+    "nombre": "Roll de panceta y queso",
+    "precio": null,
+    "descripcion": "Panceta ahumada y queso tybo.",
+    "peso": "130 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cruda",
+        "nombre": "Cruda"
+       },
+       {
+        "id": "congelada",
+        "nombre": "Congelada"
+       },
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-roll-de-nutella",
+    "categoria": "may-pasteleria",
+    "nombre": "Roll de nutella",
+    "precio": null,
+    "descripcion": "Nutella y avellanas tostadas, salsa toffee.",
+    "peso": "130 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cruda",
+        "nombre": "Cruda"
+       },
+       {
+        "id": "congelada",
+        "nombre": "Congelada"
+       },
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-danesa",
+    "categoria": "may-pasteleria",
+    "nombre": "Danesa",
+    "precio": null,
+    "descripcion": "Pastelera o cremas con frutas de estación.",
+    "foto": "img/p-danesa.webp",
+    "miniatura": "img/t-danesa.webp",
+    "peso": "120 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cruda",
+        "nombre": "Cruda"
+       },
+       {
+        "id": "congelada",
+        "nombre": "Congelada"
+       },
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-cookie-de-chocolate",
+    "categoria": "may-pasteleria",
+    "nombre": "Cookie de chocolate",
+    "precio": null,
+    "descripcion": "Húmeda adentro, crocante afuera, con avellanas.",
+    "foto": "img/p-cookie.webp",
+    "miniatura": "img/t-cookie.webp",
+    "peso": "100 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-alfajores",
+    "categoria": "may-pasteleria",
+    "nombre": "Alfajores",
+    "precio": null,
+    "descripcion": "De cacao o almendras, con dulce de leche.",
+    "peso": "80-100 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-pepas",
+    "categoria": "may-pasteleria",
+    "nombre": "Pepas",
+    "precio": null,
+    "descripcion": "Manteca y limón con centro de membrillo.",
+    "peso": "70 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-scon-de-queso",
+    "categoria": "may-pasteleria",
+    "nombre": "Scon de queso",
+    "precio": null,
+    "descripcion": "Sardo y tybo, húmedo y contundente.",
+    "peso": "180 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cruda",
+        "nombre": "Cruda"
+       },
+       {
+        "id": "congelada",
+        "nombre": "Congelada"
+       },
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-chipa",
+    "categoria": "may-pasteleria",
+    "nombre": "Chipá",
+    "precio": null,
+    "descripcion": "Sin TACC, con tybo, cremoso y reggianito.",
+    "peso": "150 g",
+    "unidad": "docenas",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cruda",
+        "nombre": "Cruda"
+       },
+       {
+        "id": "congelada",
+        "nombre": "Congelada"
+       },
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-budin-entero-choco-y-banana",
+    "categoria": "may-pasteleria",
+    "nombre": "Budín entero choco y banana",
+    "precio": null,
+    "descripcion": "Baño de chocolate semiamargo y maní.",
+    "peso": "1,7 kg",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-campo-blanco",
+    "categoria": "may-panaderia",
+    "nombre": "Campo blanco",
+    "precio": null,
+    "descripcion": "Masa madre, ideal bruschettas o tostados.",
+    "foto": "img/p-campo.webp",
+    "miniatura": "img/t-campo.webp",
+    "peso": "700 g",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-campo-integral",
+    "categoria": "may-panaderia",
+    "nombre": "Campo integral",
+    "precio": null,
+    "descripcion": "Masa madre con centeno e integral.",
+    "peso": "750 g",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-campo-semillas-y-mascabo",
+    "categoria": "may-panaderia",
+    "nombre": "Campo semillas y mascabo",
+    "precio": null,
+    "descripcion": "Chía, lino, sésamo, girasol y mascabo.",
+    "foto": "img/p-semillas.webp",
+    "miniatura": "img/t-semillas.webp",
+    "peso": "750 g",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-molde-con-semillas",
+    "categoria": "may-panaderia",
+    "nombre": "Molde con semillas",
+    "precio": null,
+    "descripcion": "Ideal tostadas y sándwiches.",
+    "peso": "900 g",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-brioche-con-sesamo",
+    "categoria": "may-panaderia",
+    "nombre": "Brioche con sésamo",
+    "precio": null,
+    "descripcion": "Ideal hamburguesas y sándwiches.",
+    "foto": "img/p-brioche.webp",
+    "miniatura": "img/t-brioche.webp",
+    "peso": "85 g",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-brioche-integral-con-semillas",
+    "categoria": "may-panaderia",
+    "nombre": "Brioche integral con semillas",
+    "precio": null,
+    "descripcion": "Miga húmeda súper esponjosa.",
+    "peso": "950 g",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-ciabatta",
+    "categoria": "may-panaderia",
+    "nombre": "Ciabatta",
+    "precio": null,
+    "descripcion": "Aceite de oliva, miga aireada.",
+    "foto": "img/p-ciabatta.webp",
+    "miniatura": "img/t-ciabatta.webp",
+    "peso": "15 × 8 cm",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-palito-de-queso",
+    "categoria": "may-panaderia",
+    "nombre": "Palito de queso",
+    "precio": null,
+    "descripcion": "Hojaldre con parmesano.",
+    "peso": "15 cm",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cruda",
+        "nombre": "Cruda"
+       },
+       {
+        "id": "congelada",
+        "nombre": "Congelada"
+       },
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-baguette",
+    "categoria": "may-panaderia",
+    "nombre": "Baguette",
+    "precio": null,
+    "descripcion": "Ideal panera o sándwiches.",
+    "peso": "300 g",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-bagel",
+    "categoria": "may-panaderia",
+    "nombre": "Bagel",
+    "precio": null,
+    "descripcion": "Ideal tostados y sánguches.",
+    "peso": "130 g",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "may-brioche",
+    "categoria": "may-panaderia",
+    "nombre": "Brioche",
+    "precio": null,
+    "descripcion": "Corteza blanda, nula acidez.",
+    "peso": "170 g",
+    "unidad": "unidades",
+    "opciones": [
+     {
+      "id": "estado",
+      "nombre": "Estado",
+      "valores": [
+       {
+        "id": "cocida",
+        "nombre": "Cocida"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

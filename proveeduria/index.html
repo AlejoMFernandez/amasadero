@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proveeduría mayorista · Amasadero</title>
+<meta name="description" content="Medialunas, croissants, rolls y panes de masa madre para tu café, hotel o local. Crudos, congelados o cocidos. Armá tu pedido semanal.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amasadero · Panadería Urbana">
+<meta property="og:url" content="https://amasadero.vercel.app/proveeduria/">
+<meta property="og:title" content="Proveeduría mayorista · Amasadero">
+<meta property="og:description" content="Armá el pedido semanal de tu café: crudo, congelado o cocido.">
+<meta property="og:image" content="https://amasadero.vercel.app/img/og.jpg?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Amasadero: croissant cortado al medio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://amasadero.vercel.app/img/og.jpg?v=1">
+<meta name="theme-color" content="#1F1A1F">
+<link rel="icon" type="image/png" href="../img/favicon.png">
+<script>document.documentElement.classList.add('js', 'hero-ok');</script>
+<link rel="preload" href="../fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../kit/kit.css?v=1">
+<link rel="stylesheet" href="../css/style.css?v=1">
+<link rel="stylesheet" href="../css/proveeduria.css?v=1">
+</head>
+<body class="pag-may">
+
+<header class="nav solida" id="nav">
+  <a class="nav__logo" href="../" aria-label="Amasadero, volver al inicio">
+    <img src="../img/isotipo.svg" alt="" class="nav__iso" width="40" height="38">
+    <img src="../img/logo.svg" alt="Amasadero · Panadería Urbana" class="nav__wm" width="170" height="36">
+  </a>
+  <nav class="nav__links" aria-label="Secciones">
+    <a href="../#carta">Carta</a>
+    <a href="../#caja">Encargos</a>
+    <a href="../#brunch">Brunch</a>
+    <a href="./" aria-current="page">Proveeduría</a>
+    <a href="../#sucursales">Sucursales</a>
+  </nav>
+  <div class="nav__acc">
+    <a class="btn btn--teja nav__cta" href="#planilla">Armar mi pedido</a>
+    <a class="btn btn--linea may-volver" href="../">← Volver</a>
+  </div>
+</header>
+
+<main>
+<section class="may-hero">
+  <div class="cont may-hero__in">
+    <div class="may-hero__txt">
+      <p class="eyebrow eyebrow--kraft rv">Proveeduría · venta mayorista</p>
+      <h1 class="h2 h2--claro may-hero__t rv">Todo lo que necesitás para tu negocio</h1>
+      <p class="lead lead--claro rv">El catálogo de 26 páginas, ahora liviano: elegí los productos, cómo los querés (crudos, congelados o cocidos) y cuántos por semana. Te respondemos con la cotización por WhatsApp.</p>
+      <ul class="may-pasos rv">
+        <li><b>1</b>Elegí productos y cantidades</li>
+        <li><b>2</b>Contanos de tu negocio</li>
+        <li><b>3</b>Recibí la cotización</li>
+      </ul>
+    </div>
+    <div class="may-hero__foto rv"><img src="../img/may-hero.webp" alt="Manos sosteniendo una bandeja de croissants horneados" width="1000" height="903"></div>
+  </div>
+</section>
+
+<section class="may" id="planilla" aria-labelledby="may-t">
+  <div class="cont may__in">
+    <div class="may__lista">
+      <div class="may__cab">
+        <h2 class="may__h" id="may-t">Catálogo</h2>
+        <div class="may__tabs" role="tablist" aria-label="Categorías">
+          <button type="button" role="tab" class="may-tab" data-may-cat="may-pasteleria" aria-selected="true">Pastelería y bollería <span id="n-pas"></span></button>
+          <button type="button" role="tab" class="may-tab" data-may-cat="may-panaderia" aria-selected="false">Panadería <span id="n-pan"></span></button>
+        </div>
+      </div>
+      <div class="may__filas" id="may-filas" aria-live="polite"></div>
+    </div>
+    <aside class="may__res" id="resumen" aria-labelledby="res-t">
+      <div class="res">
+        <h2 class="res__t" id="res-t">Tu pedido semanal</h2>
+        <ul class="res__lista" id="res-lista"><li class="res__vacio">Todavía no elegiste productos.</li></ul>
+        <form class="res__form" id="may-form" novalidate>
+          <label class="campo"><span>Tu negocio</span><input name="negocio" type="text" autocomplete="organization" placeholder="Ej.: Café del barrio" required></label>
+          <label class="campo"><span>Tu nombre</span><input name="nombre" type="text" autocomplete="name" placeholder="Quién hace el pedido" required></label>
+          <label class="campo"><span>WhatsApp</span><input name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="11 5555-5555" required></label>
+          <label class="campo"><span>Barrio o zona</span><input name="zona" type="text" autocomplete="address-level2" placeholder="Ej.: Colegiales"></label>
+          <fieldset class="campo dias">
+            <legend>Días de entrega</legend>
+            <div class="dias__op">
+              <label><input type="checkbox" name="dia" value="Martes"><span>Mar</span></label>
+              <label><input type="checkbox" name="dia" value="Miércoles"><span>Mié</span></label>
+              <label><input type="checkbox" name="dia" value="Jueves"><span>Jue</span></label>
+              <label><input type="checkbox" name="dia" value="Viernes"><span>Vie</span></label>
+              <label><input type="checkbox" name="dia" value="Sábado"><span>Sáb</span></label>
+            </div>
+          </fieldset>
+          <p class="res__err" id="may-err" role="alert"></p>
+          <button type="submit" class="btn btn--teja btn--big res__ok" id="may-ok">Pedir cotización por WhatsApp</button>
+          <p class="res__nota">Va al WhatsApp de la proveeduría (11 2530-1430). Los precios se cotizan según volumen y frecuencia.</p>
+        </form>
+        <div class="res__listo" id="may-listo" hidden>
+          <span class="res__check" aria-hidden="true">✓</span>
+          <h3>¡Pedido enviado!</h3>
+          <p id="may-listo-txt"></p>
+          <button type="button" class="btn btn--linea" id="may-otro">Armar otro pedido</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>
+
+<div class="may-barra" id="may-barra" hidden>
+  <a class="btn btn--teja btn--big" href="#resumen"><span id="may-barra-txt">Ver mi pedido</span></a>
+</div>
+
+<footer class="pie">
+  <div class="cont pie__in">
+    <div class="pie__marca">
+      <img src="../img/logo-blanco.svg" alt="Amasadero · Panadería Urbana" width="220" height="46" loading="lazy">
+      <p>Masa madre, medialunas y laminados hechos todos los días.</p>
+    </div>
+    <div class="pie__col">
+      <h3>Proveeduría</h3>
+      <p><a href="https://wa.me/5491125301430" target="_blank" rel="noopener">WhatsApp 11 2530-1430</a></p>
+      <p><a href="https://instagram.com/amasadero.pan" target="_blank" rel="noopener">@amasadero.pan</a></p>
+    </div>
+    <div class="pie__col">
+      <h3>Locales</h3>
+      <p>Thames 1565, Palermo</p>
+      <p>Av. Dr. Ricardo Balbín 2551, Belgrano</p>
+      <p>Martes a domingos · 8:30 a 20:00 hs</p>
+    </div>
+  </div>
+  <div class="cont pie__base">
+    <span>© Amasadero · Panadería Urbana</span>
+    <span>Sitio desarrollado por <a href="https://alejomfernandez.com.ar" target="_blank" rel="noopener">Alejo Martín Fernández</a></span>
+  </div>
+</footer>
+
+<script type="module" src="../js/proveeduria.js?v=1"></script>
+</body>
+</html>

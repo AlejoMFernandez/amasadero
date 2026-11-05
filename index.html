@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amasadero · Panadería Urbana en Palermo y Belgrano</title>
+<meta name="description" content="La carta de cada sucursal, encargos para retirar en Palermo y Belgrano y proveeduría para tu café, hotel o local.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amasadero · Panadería Urbana">
+<meta property="og:url" content="https://amasadero.vercel.app/">
+<meta property="og:title" content="Amasadero · Panadería Urbana">
+<meta property="og:description" content="La carta de cada sucursal, encargos para retirar y proveeduría para tu café.">
+<meta property="og:image" content="https://amasadero.vercel.app/img/og.jpg?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Amasadero: croissant cortado al medio, la carta de cada sucursal y encargos para retirar">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://amasadero.vercel.app/img/og.jpg?v=1">
+<meta name="theme-color" content="#E2E0DC">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<script>
+  (function () {
+    var d = document.documentElement;
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('con-intro');
+    d.classList.add('js');
+  })();
+</script>
+<link rel="preload" href="fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m-900.webp" media="(max-width: 767px)">
+<link rel="preload" as="image" href="img/hero-d-1440.webp" media="(min-width: 768px)">
+<link rel="stylesheet" href="kit/kit.css?v=1">
+<link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+
+<div id="intro" aria-hidden="true">
+  <div class="in-capas">
+    <span class="in-capa" style="--i:0"></span><span class="in-capa" style="--i:1"></span><span class="in-capa" style="--i:2"></span><span class="in-capa" style="--i:3"></span>
+    <span class="in-capa" style="--i:4"></span><span class="in-capa" style="--i:5"></span><span class="in-capa" style="--i:6"></span><span class="in-capa" style="--i:7"></span>
+  </div>
+  <div class="in-hilos"><i></i><i></i><i></i><i></i></div>
+  <div class="in-logo">
+    <img src="img/isotipo.svg" alt="" class="in-iso" width="120" height="115">
+    <img src="img/logo.svg" alt="" class="in-wm" width="300" height="63">
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#inicio" aria-label="Amasadero, ir al inicio">
+    <img src="img/isotipo.svg" alt="" class="nav__iso" width="40" height="38">
+    <img src="img/logo.svg" alt="Amasadero · Panadería Urbana" class="nav__wm" width="170" height="36">
+  </a>
+  <nav class="nav__links" aria-label="Secciones">
+    <a href="#carta">Carta</a>
+    <a href="#caja">Encargos</a>
+    <a href="#brunch">Brunch</a>
+    <a href="proveeduria/">Proveeduría</a>
+    <a href="#sucursales">Sucursales</a>
+  </nav>
+  <div class="nav__acc">
+    <a class="btn btn--teja nav__cta" href="#caja">Encargar<span class="nav__cta-x"> para retirar</span></a>
+    <button type="button" class="nav__bolsa" data-kit-open="carrito" data-kit-target aria-label="Abrir tu bolsa">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span class="nav__n" hidden>0</span>
+    </button>
+    <button type="button" class="nav__menu" aria-label="Abrir el menú" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Menú">
+    <a href="#carta" style="--i:0">Carta</a>
+    <a href="#caja" style="--i:1">Armá tu caja</a>
+    <a href="#brunch" style="--i:2">Brunch y finde</a>
+    <a href="proveeduria/" style="--i:3">Proveeduría</a>
+    <a href="#sucursales" style="--i:4">Sucursales</a>
+  </nav>
+  <p class="menu__pie">Martes a domingos · 8:30 a 20:00 hs</p>
+</div>
+
+<main id="inicio">
+
+<!-- HERO -->
+<section class="hero" aria-label="Amasadero">
+  <picture class="hero__foto">
+    <source media="(min-width: 768px)" srcset="img/hero-d-960.webp 960w, img/hero-d-1440.webp 1440w" sizes="100vw">
+    <img src="img/hero-m-900.webp" srcset="img/hero-m-900.webp 900w, img/hero-m-1200.webp 1200w" sizes="100vw" alt="Croissant recién horneado junto a un café con la A de Amasadero" width="900" height="1126" fetchpriority="high">
+  </picture>
+  <div class="hero__velo"></div>
+  <div class="hero__in">
+    <p class="eyebrow eyebrow--kraft hero__ey">Panadería urbana · masa madre</p>
+    <h1 class="hero__t"><span class="ln"><span>Pan real,</span></span> <span class="ln"><span>sin vueltas</span></span></h1>
+    <p class="hero__p">Medialunas todas las mañanas, panes de masa madre y laminados. Elegí tu sucursal y mirá qué hay hoy.</p>
+    <a class="btn btn--teja btn--big hero__cta" href="#caja">Armá tu caja</a>
+  </div>
+  <div class="hero__suc">
+    <button type="button" class="suc-card suc-card--clara" data-suc="palermo" style="--d:0">
+      <span class="suc-card__n">Palermo</span>
+      <span class="suc-card__s">Thames 1565 · café, brunch y cocina</span>
+      <span class="suc-card__e" data-estado="palermo"></span>
+    </button>
+    <button type="button" class="suc-card" data-suc="belgrano" style="--d:1">
+      <span class="suc-card__n">Belgrano I</span>
+      <span class="suc-card__s">Av. Balbín 2551 · panadería</span>
+      <span class="suc-card__e" data-estado="belgrano"></span>
+    </button>
+    <a class="suc-card suc-card--teja" href="proveeduria/" style="--d:2">
+      <span class="suc-card__n">Proveeduría</span>
+      <span class="suc-card__s">Para tu café, hotel o local →</span>
+    </a>
+  </div>
+</section>
+
+<!-- WOW C · AHORA SALE DEL HORNO -->
+<section class="ahora" id="ahora" aria-labelledby="ahora-t">
+  <div class="cont ahora__in">
+    <div class="ahora__txt rv">
+      <p class="eyebrow eyebrow--claro" id="ahora-chip">Abierto</p>
+      <h2 class="h2 h2--claro" id="ahora-t">Ahora sale del horno</h2>
+      <p class="ahora__frase" id="ahora-frase">Medialunas recién horneadas y café de especialidad.</p>
+      <a class="btn btn--harina" id="ahora-cta" href="#carta">Ver la pastelería</a>
+    </div>
+    <div class="ahora__mom" role="tablist" aria-label="Momentos del día">
+      <button type="button" role="tab" class="mom rv" data-mom="manana" style="--d:0" aria-selected="false">
+        <span class="mom__foto"><img src="img/reloj-manana.webp" alt="" width="700" height="669" loading="lazy"></span>
+        <span class="mom__h">8:30 hs</span><span class="mom__t">Medialunas y café</span>
+      </button>
+      <button type="button" role="tab" class="mom rv" data-mom="mediodia" style="--d:1" aria-selected="false">
+        <span class="mom__foto"><img src="img/reloj-mediodia.webp" alt="" width="700" height="700" loading="lazy"></span>
+        <span class="mom__h">12:00 hs</span><span class="mom__t">Promo almuerzo</span>
+      </button>
+      <button type="button" role="tab" class="mom rv" data-mom="tarde" style="--d:2" aria-selected="false">
+        <span class="mom__foto"><img src="img/reloj-tarde.webp" alt="" width="700" height="700" loading="lazy"></span>
+        <span class="mom__h">16:00 hs</span><span class="mom__t">Merienda y tortas</span>
+      </button>
+      <button type="button" role="tab" class="mom rv" data-mom="cerrado" style="--d:3" aria-selected="false">
+        <span class="mom__foto"><img src="img/reloj-noche.webp" alt="" width="700" height="700" loading="lazy"></span>
+        <span class="mom__h">Cerrado</span><span class="mom__t">Encargá para mañana</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- WOW B · DEL PROCESO AL RESULTADO -->
+<section class="proceso" aria-labelledby="proceso-t">
+  <div class="cont proceso__in">
+    <div class="proceso__txt">
+      <p class="eyebrow rv">Hecho acá, todos los días</p>
+      <h2 class="h2 rv" id="proceso-t">Del proceso al resultado</h2>
+      <p class="lead rv">Arrastrá la línea: de un lado la masa recién formada, del otro la bandeja que sale del horno.</p>
+      <ul class="datos">
+        <li class="rv" style="--d:0"><b>Medialunas de 70 g</b><span>Súper esponjosas y húmedas, terminadas con mucho almíbar.</span></li>
+        <li class="rv" style="--d:1"><b>Croissants de 100 g</b><span>Masa hojaldrada, súper livianos y aireados, levemente dulces.</span></li>
+        <li class="rv" style="--d:2"><b>Panes de masa madre</b><span>Corteza crujiente pero fina, baja acidez y miga húmeda.</span></li>
+      </ul>
+    </div>
+    <figure class="comp rv" id="comp" style="--x:50%">
+      <img class="comp__b" src="img/proceso-horneado-1200.webp" srcset="img/proceso-horneado-700.webp 700w, img/proceso-horneado-1200.webp 1200w" sizes="(min-width: 1024px) 640px, 100vw" alt="Bandeja de croissants recién horneados" width="1200" height="900" loading="lazy" draggable="false">
+      <img class="comp__a" src="img/proceso-crudo-1200.webp" srcset="img/proceso-crudo-700.webp 700w, img/proceso-crudo-1200.webp 1200w" sizes="(min-width: 1024px) 640px, 100vw" alt="Croissants crudos recién formados" width="1200" height="900" loading="lazy" draggable="false">
+      <span class="comp__tag comp__tag--a">El proceso</span>
+      <span class="comp__tag comp__tag--b">El resultado</span>
+      <span class="comp__linea" aria-hidden="true"><span class="comp__mango"><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg></span></span>
+      <input class="comp__range" type="range" min="0" max="100" value="50" aria-label="Comparar el proceso con el resultado">
+    </figure>
+  </div>
+</section>
+
+<!-- CARTA POR SUCURSAL -->
+<section class="carta" id="carta" aria-labelledby="carta-t">
+  <div class="cont">
+    <div class="carta__cab">
+      <div>
+        <p class="eyebrow rv">La carta de cada sucursal</p>
+        <h2 class="h2 rv" id="carta-t">¿Qué hay hoy?</h2>
+      </div>
+      <div class="seg rv" role="group" aria-label="Elegí la sucursal">
+        <button type="button" class="seg__b" data-suc="palermo" aria-pressed="true"><span>Palermo</span><small>Thames 1565</small></button>
+        <button type="button" class="seg__b" data-suc="belgrano" aria-pressed="false"><span>Belgrano I</span><small>Balbín 2551</small></button>
+      </div>
+    </div>
+    <div class="carta__cuerpo">
+      <div class="carta__kit" data-kit="carta" id="carta-pal" data-kit-categoria="pal-pasteleria" data-suc-panel="palermo"></div>
+      <div class="carta__kit" data-kit="carta" id="carta-bel" data-kit-categoria="bel-pasteleria" data-suc-panel="belgrano" hidden></div>
+      <figure class="carta__foto" id="carta-foto" aria-live="polite">
+        <div class="carta__foto-marco"><img src="img/p-medialunas.webp" alt="12 medialunas" width="720" height="864" id="carta-foto-img"></div>
+        <figcaption><b id="carta-foto-n">12 medialunas</b><span id="carta-foto-d">Súper esponjosas y húmedas, terminadas con mucho almíbar.</span></figcaption>
+      </figure>
+    </div>
+    <p class="carta__pie rv">Precios de la carta de cada local. También está la <a href="carta/">carta online del QR</a>, que el local actualiza desde su panel.</p>
+  </div>
+</section>
+
+<!-- WOW A · ARMÁ TU CAJA -->
+<section class="caja" id="caja" aria-labelledby="caja-t">
+  <div class="cont">
+    <div class="caja__cab">
+      <p class="eyebrow rv">Encargos para retirar · sin apps</p>
+      <h2 class="h2 rv" id="caja-t">Armá tu caja</h2>
+      <p class="lead rv">Elegí 6 o 12 piezas, encargala con un día de anticipación y pasala a buscar por <b id="caja-suc">Palermo</b>.</p>
+    </div>
+    <div class="caja__in">
+      <div class="caja__box rv" id="caja-box" data-drop>
+        <div class="caja__top">
+          <div class="seg seg--chico" role="group" aria-label="Tamaño de la caja">
+            <button type="button" class="seg__b" data-tam="6" aria-pressed="false"><span>Caja x 6</span></button>
+            <button type="button" class="seg__b" data-tam="12" aria-pressed="true"><span>Caja x 12</span></button>
+          </div>
+          <span class="caja__cuenta"><b id="caja-n">0</b> / <span id="caja-max">12</span></span>
+        </div>
+        <ol class="caja__huecos" id="caja-huecos" aria-label="Piezas en tu caja"></ol>
+        <div class="caja__pie">
+          <div><span class="caja__lbl">Total de la caja</span><b class="caja__total" id="caja-total">$ 0</b></div>
+          <button type="button" class="btn btn--teja btn--big" id="caja-ok" disabled>Sumar a la bolsa</button>
+        </div>
+        <p class="caja__ayuda" id="caja-ayuda">Tocá una pieza para sumarla. Tocá un hueco para sacarla.</p>
+      </div>
+      <div class="caja__piezas" id="caja-piezas" aria-label="Piezas para elegir"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRUNCH Y FINDE -->
+<section class="brunch" id="brunch" aria-labelledby="brunch-t">
+  <div class="cont">
+    <div class="brunch__cab">
+      <p class="eyebrow rv">Fin de semana en Amasadero</p>
+      <h2 class="h2 rv" id="brunch-t">Brunch para dos y especiales del finde</h2>
+    </div>
+    <div class="brunch__duo">
+      <article class="bcard rv" style="--d:0">
+        <div class="bcard__foto"><img src="img/brunch-amasadero.webp" alt="Mesa de brunch con huevos, waffles, café y pastelería" width="900" height="900" loading="lazy"></div>
+        <div class="bcard__txt">
+          <p class="bcard__lugar">Palermo · para 2</p>
+          <h3>Brunch Amasadero</h3>
+          <p>2 infusiones, yogurt con granola y fruta, avocado toast, croissant de jamón y queso, alfajor, porción de torta y 2 jugos de naranja.</p>
+          <b class="bcard__precio" data-precio="pal-brunch-amasadero-para-2">$ 40.700</b>
+        </div>
+      </article>
+      <article class="bcard rv" style="--d:1">
+        <div class="bcard__foto"><img src="img/brunch-soho.webp" alt="Brunch con café, waffle, tostado y torta junto al sillón terracota" width="900" height="900" loading="lazy"></div>
+        <div class="bcard__txt">
+          <p class="bcard__lugar">Palermo · para 2</p>
+          <h3>Brunch Soho</h3>
+          <p>2 infusiones, huevos revueltos, croissant de pollo y palta, cookie, waffle con nutella, crema y frutos rojos y limonada.</p>
+          <b class="bcard__precio" data-precio="pal-brunch-soho-para-2">$ 35.000</b>
+        </div>
+      </article>
+    </div>
+    <div class="finde">
+      <div class="finde__cab rv">
+        <h3>Especiales del finde</h3>
+        <p>Se encargan para retirar el sábado o el domingo.</p>
+      </div>
+      <div class="fila" id="finde-fila" data-arrastre>
+        <div class="fila__pista" id="finde-pista"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVEEDURÍA (franja) -->
+<section class="prov" aria-labelledby="prov-t">
+  <div class="cont prov__in">
+    <div class="prov__txt">
+      <p class="eyebrow eyebrow--kraft rv">Proveeduría · venta mayorista</p>
+      <h2 class="h2 h2--claro rv" id="prov-t">¿Tenés un café, hotel o local?</h2>
+      <p class="lead lead--claro rv">Medialunas, croissants, rolls y panes de masa madre, crudos, congelados o cocidos. Armá tu pedido semanal y te mandamos la cotización.</p>
+      <a class="btn btn--harina btn--big rv" href="proveeduria/">Armar mi pedido semanal</a>
+    </div>
+    <div class="prov__foto rv"><img src="img/may-hero.webp" alt="Manos sosteniendo una bandeja de croissants horneados" width="1000" height="903" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- MOSTRADOR (galería) -->
+<section class="mostrador" aria-labelledby="most-t">
+  <div class="cont">
+    <div class="mostrador__cab">
+      <p class="eyebrow rv">Así se ve</p>
+      <h2 class="h2 rv" id="most-t">El mostrador</h2>
+      <p class="lead mostrador__ayuda">Deslizá las fotos con el dedo.</p>
+    </div>
+    <div class="galeria" id="galeria">
+      <figure class="gal gal--1" style="--r:-2deg;--d:0"><img src="img/mostrador-1.webp" alt="Salón de Palermo con mesas blancas y luz cálida" width="800" height="1422" loading="lazy" draggable="false"></figure>
+      <figure class="gal gal--2" style="--r:1.5deg;--d:1"><img src="img/mostrador-8.webp" alt="Croissant cortado al medio" width="800" height="1001" loading="lazy" draggable="false"></figure>
+      <figure class="gal gal--3" style="--r:-1deg;--d:2"><img src="img/mostrador-2.webp" alt="Mostrador con croissants y tortas" width="800" height="800" loading="lazy" draggable="false"></figure>
+      <figure class="gal gal--4" style="--r:2deg;--d:3"><img src="img/mostrador-3.webp" alt="Brunch sobre una mesa junto al sillón terracota" width="800" height="1000" loading="lazy" draggable="false"></figure>
+      <figure class="gal gal--5" style="--r:-1.5deg;--d:4"><img src="img/mostrador-7.webp" alt="Estantes con panes de brioche con sésamo" width="800" height="1000" loading="lazy" draggable="false"></figure>
+      <figure class="gal gal--6" style="--r:1deg;--d:5"><img src="img/mostrador-6.webp" alt="Croissant en bolsa kraft y café con la A" width="800" height="750" loading="lazy" draggable="false"></figure>
+      <figure class="gal gal--7" style="--r:-2deg;--d:6"><img src="img/mostrador-4.webp" alt="Salón con plantas y barandas terracota" width="800" height="999" loading="lazy" draggable="false"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- SUCURSALES -->
+<section class="sucursales" id="sucursales" aria-labelledby="suc-t">
+  <div class="cont">
+    <div class="suc__cab">
+      <p class="eyebrow rv">Cómo llegar</p>
+      <h2 class="h2 rv" id="suc-t">Dos sucursales</h2>
+      <div class="seg suc__tabs rv" role="group" aria-label="Elegí la sucursal">
+        <button type="button" class="seg__b" data-suc-mapa="palermo" aria-pressed="true"><span>Palermo</span></button>
+        <button type="button" class="seg__b" data-suc-mapa="belgrano" aria-pressed="false"><span>Belgrano I</span></button>
+      </div>
+    </div>
+    <div class="suc__grid">
+      <article class="suc rv on" data-suc-bloque="palermo">
+        <div class="suc__foto"><img src="img/suc-palermo.webp" alt="Fachada de Amasadero Palermo con el cartel redondo de la A" width="900" height="1120" loading="lazy"></div>
+        <div class="suc__info">
+          <h3>Palermo</h3>
+          <p class="suc__dir">Thames 1565, Palermo</p>
+          <p class="suc__est" data-estado="palermo"></p>
+          <ul class="suc__hor"><li><span>Martes a domingos</span><b>8:30 a 20:00 hs</b></li><li><span>Lunes</span><b>Cerrado</b></li></ul>
+          <p class="suc__que">Café de especialidad, brunch, cocina y panadería.</p>
+          <div class="suc__map"><iframe title="Mapa de Amasadero Palermo" src="https://www.google.com/maps?q=Thames+1565,+Palermo,+Buenos+Aires&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <a class="btn btn--linea" href="https://maps.google.com/?q=Thames+1565,+Palermo,+Buenos+Aires" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </div>
+      </article>
+      <article class="suc rv" data-suc-bloque="belgrano" style="--d:1">
+        <div class="suc__foto"><img src="img/suc-belgrano.webp" alt="Mostrador de Amasadero Belgrano con estantes de panes" width="900" height="1120" loading="lazy"></div>
+        <div class="suc__info">
+          <h3>Belgrano I</h3>
+          <p class="suc__dir">Av. Dr. Ricardo Balbín 2551</p>
+          <p class="suc__est" data-estado="belgrano"></p>
+          <ul class="suc__hor"><li><span>Martes a sábados</span><b>8:30 a 20:00 hs</b></li><li><span>Domingos</span><b>8:30 a 18:00 hs</b></li><li><span>Lunes</span><b>Cerrado</b></li></ul>
+          <p class="suc__que">Panadería y pastelería para llevar.</p>
+          <div class="suc__map"><iframe title="Mapa de Amasadero Belgrano I" src="https://www.google.com/maps?q=Av.+Ricardo+Balb%C3%ADn+2551,+Buenos+Aires&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <a class="btn btn--linea" href="https://maps.google.com/?q=Av.+Ricardo+Balb%C3%ADn+2551,+Buenos+Aires" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="cont pie__in">
+    <div class="pie__marca">
+      <img src="img/logo-blanco.svg" alt="Amasadero · Panadería Urbana" width="220" height="46" loading="lazy">
+      <p>Masa madre, medialunas y laminados hechos todos los días.</p>
+    </div>
+    <div class="pie__col">
+      <h3>Visitanos</h3>
+      <p>Thames 1565, Palermo</p>
+      <p>Av. Dr. Ricardo Balbín 2551, Belgrano</p>
+      <p>Martes a domingos · 8:30 a 20:00 hs</p>
+    </div>
+    <div class="pie__col">
+      <h3>Escribinos</h3>
+      <p><a href="https://wa.me/5491171975411" target="_blank" rel="noopener">WhatsApp 11 7197-5411</a></p>
+      <p><a href="https://wa.me/5491125301430" target="_blank" rel="noopener">Proveeduría 11 2530-1430</a></p>
+      <p><a href="https://instagram.com/amasadero.pan" target="_blank" rel="noopener">@amasadero.pan</a></p>
+      <p class="pie__apps">También en Rappi y PedidosYa</p>
+    </div>
+  </div>
+  <div class="cont pie__base">
+    <span>© Amasadero · Panadería Urbana</span>
+    <span>Sitio desarrollado por <a href="https://alejomfernandez.com.ar" target="_blank" rel="noopener">Alejo Martín Fernández</a></span>
+  </div>
+</footer>
+
+<div class="visor" id="visor" hidden>
+  <button type="button" class="visor__x" aria-label="Cerrar la foto">×</button>
+  <figure><img src="" alt="" id="visor-img"><figcaption id="visor-txt"></figcaption></figure>
+</div>
+
+<script type="module" src="js/app.js?v=1"></script>
+</body>
+</html>
