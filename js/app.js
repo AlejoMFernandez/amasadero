@@ -17,12 +17,13 @@ async function intro() {
   if (!root.classList.contains('con-intro') || !el) { requestAnimationFrame(fin); return; }
   const celu = innerWidth < 768;
   const heroSrc = celu ? 'img/hero-m-900.webp' : 'img/hero-d-1440.webp';
-  const espera = Promise.race([Promise.all([document.fonts?.ready, precargar(heroSrc)]), new Promise((r) => setTimeout(r, 2600))]);
+  const espera = Promise.race([Promise.all([document.fonts?.ready, precargar(heroSrc)]), new Promise((r) => setTimeout(r, 2400))]);
   el.classList.add('anda');
-  await Promise.all([espera, new Promise((r) => setTimeout(r, celu ? 1050 : 1450))]);
-  el.classList.add('abre');
-  setTimeout(() => { root.classList.remove('con-intro'); root.classList.add('hero-ok'); }, 220);
-  setTimeout(fin, celu ? 760 : 900);
+  // el logo se termina de armar a los ~1,15 s: recién ahí se abre la masa
+  await Promise.all([espera, new Promise((r) => setTimeout(r, celu ? 1250 : 1550))]);
+  el.classList.add('abre');                       // .abre mantiene la intro visible mientras se abren las franjas
+  setTimeout(() => { root.classList.remove('con-intro'); root.classList.add('hero-ok'); }, 260);
+  setTimeout(fin, 1000);                          // franjas: 0,62 s + escalonado 7 × 40 ms
 }
 intro();
 
@@ -182,9 +183,9 @@ function decorarCarta(el, productos) {
     const enc = ENCARGABLE.test(cid);
     pn.innerHTML = `<header class="sec-cab"><h3>${esc(nombre)}</h3><p>${items.length} opciones${enc ? ' · <b>se puede encargar para retirar</b>' : ''}${BAJADA[tipo] ? `<br>${esc(BAJADA[tipo])}` : ''}</p></header>`;
     pn.appendChild(wrap);
-    pn.classList.toggle('dos-col', ['cafe', 'bebidas', 'promos'].includes(tipo));
+    pn.classList.toggle('dos-col', items.length > 5);
     const nv = document.createElement('nav'); nv.className = 'sec-nav'; nv.setAttribute('aria-label', 'Secciones de la carta');
-    nv.innerHTML = `${i > 0 ? `<button type="button" data-dir="-1">← ${esc(tabs[i - 1].textContent)}</button>` : ''}${i < tabs.length - 1 ? `<button type="button" data-dir="1">${esc(tabs[i + 1].textContent)} →</button>` : ''}`;
+    nv.innerHTML = `${i > 0 ? `<button type="button" data-dir="-1"><span aria-hidden="true">←</span><small>Anterior</small>${esc(tabs[i - 1].textContent)}</button>` : ''}${i < tabs.length - 1 ? `<button type="button" data-dir="1"><small>Siguiente</small>${esc(tabs[i + 1].textContent)}<span aria-hidden="true">→</span></button>` : ''}`;
     pn.appendChild(nv);
   });
   kit?.carrito?.sync(el);
@@ -209,27 +210,34 @@ document.addEventListener('click', (e) => {
 });
 document.addEventListener('click', (e) => { if (e.target.closest('.kit-tab')) setTimeout(fotoInicial, 30); });
 
-// foto fija al costado (desktop)
-const fImg = $('#carta-foto-img');
-let fotoId = null, rafF = 0;
-function mostrarFoto(p) {
-  if (!p || !p.foto || p.id === fotoId) return; fotoId = p.id;
-  fImg.classList.add('cambia');
-  const src = kit.asset(p.foto);
-  precargar(src).then(() => { fImg.src = src; fImg.alt = p.nombre; $('#carta-foto-n').textContent = p.nombre; $('#carta-foto-d').textContent = p.descripcion || ''; requestAnimationFrame(() => fImg.classList.remove('cambia')); });
-  $$('.kit-item.foto-on').forEach((x) => x.classList.remove('foto-on'));
-  $$(`.kit-item[data-id="${CSS.escape(p.id)}"]`).forEach((x) => x.classList.add('foto-on'));
+// foto del producto: popup al pasar el mouse (desktop) · en el celu, tocar la miniatura abre el visor
+const pop = $('#foto-pop'), pImg = $('#foto-pop-img');
+let popId = null, popT = 0;
+function verPop(it) {
+  const p = PRODS.find((x) => x.id === it.dataset.id); if (!p?.foto) return;
+  clearTimeout(popT);
+  // aparece en el lugar libre bajo el índice de secciones: nunca tapa otros productos
+  const tabs = it.closest('.kit-carta')?.querySelector('.kit-tabs'); const r = tabs.getBoundingClientRect(); const H = 340;
+  const x = r.left; let y = r.bottom + 22; y = Math.max(96, Math.min(innerHeight - H - 16, y));
+  pop.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`;
+  if (popId !== p.id) {
+    popId = p.id; pop.classList.add('cargando'); pImg.removeAttribute('src');
+    $('#foto-pop-n').textContent = p.nombre;
+    const src = kit.asset(p.foto);
+    precargar(src).then(() => { if (popId !== p.id) return; pImg.src = src; pImg.alt = p.nombre; pop.classList.remove('cargando'); });
+  }
+  pop.classList.add('on');
 }
-function fotoInicial() {
-  const panel = $(`[data-suc-panel="${SUC}"] .kit-carta__panel:not([hidden])`);
-  const it = panel && $$('.kit-item', panel).map((x) => PRODS.find((p) => p.id === x.dataset.id)).find((p) => p?.foto);
-  if (it) mostrarFoto(it);
-}
-$('.carta__cuerpo').addEventListener('pointerover', (e) => {
-  if (e.pointerType !== 'mouse') return;
-  const it = e.target.closest('.kit-item.con-foto'); if (!it) return;
-  cancelAnimationFrame(rafF); rafF = requestAnimationFrame(() => mostrarFoto(PRODS.find((p) => p.id === it.dataset.id)));
+function ocultarPop() { popT = setTimeout(() => pop.classList.remove('on'), 60); }
+function fotoInicial() {}
+$('#carta').addEventListener('pointerover', (e) => {
+  if (e.pointerType !== 'mouse' || !esDesk()) return;
+  const it = e.target.closest('.kit-item.con-foto'); if (it) verPop(it);
 });
+$('#carta').addEventListener('pointerout', (e) => {
+  const it = e.target.closest('.kit-item.con-foto'); if (it && !it.contains(e.relatedTarget)) ocultarPop();
+});
+addEventListener('scroll', () => pop.classList.remove('on'), { passive: true });
 
 /* ---------------- WOW A · ARMÁ TU CAJA ---------------- */
 const PIEZAS = ['medialuna', 'croissant', 'pan-de-chocolate', 'roll-de-canela', 'medialuna-rellena', 'palmeritas'];
@@ -401,6 +409,7 @@ try {
     cartas: { 'carta-pal': { template: templateItem, filtro: (p) => p.categoria.startsWith('pal-') }, 'carta-bel': { template: templateItem, filtro: (p) => p.categoria.startsWith('bel-') } },
     carrito: { label: 'Tu bolsa', icono: '<svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>' },
     imagenes: { lqip: 'img/lqip.json' },
+    badgeTexto: innerWidth < 1024 ? 'Panel del dueño' : 'Probá el panel del dueño',
   });
   await kit.carrito?.listo;
   PRODS = await kit.store.getProductos();
